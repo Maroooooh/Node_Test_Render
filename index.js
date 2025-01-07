@@ -42,7 +42,10 @@ app.use(express.static('./static'))
 
 
 
-mongoose.connect('mongodb+srv://mmarahmohamed:OMfy2INSpTj3k05j@cluster0.px9it.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0').then(()=>{
+mongoose.connect('mongodb+srv://mmarahmohamed:OMfy2INSpTj3k05j@cluster0.px9it.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }).then(()=>{
     console.log("connected to DB successfully");
 }).catch((err)=>{
     console.log(err);
