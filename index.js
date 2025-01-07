@@ -6,7 +6,7 @@ const productsRoutes=require("./routes/products")
 const usersRoutes=require("./routes/users");
 const port = 3333 || process.env.PORT ;
 var app = express()
-
+const uri = process.env.MONGOURI;
 
 app.use(cors())
 //middleware   >>
@@ -42,7 +42,7 @@ app.use(express.static('./static'))
 
 
 
-mongoose.connect('mongodb+srv://mmarahmohamed:OMfy2INSpTj3k05j@cluster0.px9it.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',  {
+mongoose.connect(uri,  {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }).then(()=>{
